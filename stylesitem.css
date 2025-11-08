@@ -1,0 +1,116 @@
+:root{
+  --card-bg: #ffffff;
+  --accent: #1e90ff;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --max-width: 360px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,#f3f4f6 0%, #eef2ff 100%);
+  padding:24px;
+}
+.product-card{
+  width:100%;
+  max-width:var(--max-width);
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.product-media{
+  background:linear-gradient(90deg,#eef2ff 0%, #ffffff 100%);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:220px;
+}
+.product-media img{
+  max-width:100%;
+  max-height:100%;
+  border-radius:8px;
+  object-fit:cover;
+}
+.product-body{
+  padding:16px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.product-title{
+  font-size:18px;
+  font-weight:600;
+  color:#0f172a;
+  margin:0;
+  line-height:1.2;
+}
+.product-desc{
+  font-size:14px;
+  color:var(--muted);
+  margin:0;
+}
+.product-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:4px;
+}
+.price{
+  font-size:18px;
+  font-weight:700;
+  color:#111827;
+}
+.buy-row{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+}
+.btn{
+  appearance:none;
+  border: none;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+}
+.btn-buy{
+  background:var(--accent);
+  color:#fff;
+  box-shadow: 0 6px 12px rgba(30,144,255,0.12);
+  flex:1;
+}
+.btn-details{
+  background:transparent;
+  color:var(--accent);
+  border:1px solid rgba(30,144,255,0.12);
+  min-width:48px;
+}
+.badge{
+  background:#10b981;
+  color:#fff;
+  padding:6px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  display:inline-block;
+}
+.small{
+  font-size:13px;
+  color:#374151;
+}
+@media (max-width:420px){
+  .product-media{height:180px}
+  :root{--max-width:420px}
+}

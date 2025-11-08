@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Sesamo AutoParts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Sesamo AutoParts</div>
+    <nav>
+      <a href="index.html" class="btn">Voltar</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Entrar / Registrar</h1>
+
+    <form id="loginPageForm" class="login-form" novalidate>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required minlength="4" />
+
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" required pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$" placeholder="(99) 99999-9999" />
+
+      <button type="submit" class="btn primary">Entrar</button>
+    </form>
+  </main>
+
+  <script>
+    // Salva usuário no localStorage e redireciona para a página inicial
+    document.getElementById('loginPageForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value;
+      const telefone = document.getElementById('telefone').value.trim();
+
+      if (!nome || !email || senha.length < 4 || !telefone) {
+        alert('Preencha todos os campos corretamente.');
+        return;
+      }
+
+      const user = { nome, email, telefone };
+      try {
+        localStorage.setItem('sesamo_user', JSON.stringify(user));
+      } catch (err) {
+        console.warn('localStorage indisponível', err);
+      }
+
+      window.location.href = 'index.html';
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

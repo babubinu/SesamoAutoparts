@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrinho - Sesamo AutoParts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Sesamo AutoParts</div>
+    <nav>
+      <a href="index.html" class="btn">Continuar comprando</a>
+      <a href="login.html" class="btn">Minha conta</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Carrinho</h1>
+
+    <section id="cartEmpty" class="card" style="display:none;">
+      <p>Seu carrinho está vazio.</p>
+      <a href="index.html" class="btn">Ver produtos</a>
+    </section>
+
+    <section id="cartList" style="display:none;">
+      <div class="cart-header" style="display:flex;gap:16px;align-items:center;margin-bottom:12px;">
+        <strong>Produto</strong>
+        <strong style="margin-left:auto">Subtotal</strong>
+      </div>
+
+      <div id="cartItems" aria-live="polite"></div>
+
+      <div class="cart-summary card" style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div><strong>Total:</strong></div>
+          <div id="cartTotal" style="font-size:1.25rem; font-weight:700;"></div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button id="clearCart" class="btn">Limpar carrinho</button>
+          <button id="checkoutBtn" class="btn primary">Finalizar compra</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy Sesamo AutoParts .</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
